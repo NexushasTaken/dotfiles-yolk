@@ -1,6 +1,6 @@
 [core]
   editor="nvim"
-  compression = 0
+  compression = -1
 [init]
   defaultBranch="master"
 [diff]
