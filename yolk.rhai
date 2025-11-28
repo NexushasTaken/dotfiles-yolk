@@ -21,6 +21,15 @@ export let eggs = #{
     unsafe_shell_hooks: #{
       pre_deploy: "./bin/ly.sh",
     },
+  },
+
+  bat: #{
+    enabled: SYSTEM.distro == "Arch Linux",
+    targets: "~/.config/bat",
+    templates: ["config"],
+    unsafe_shell_hooks: #{
+      pre_deploy: "./bin/bat.sh",
+    },
   }
 };
 
