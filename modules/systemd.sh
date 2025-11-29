@@ -7,3 +7,4 @@ function enable-service() {
     log "$service is now enabled."
   fi
 }
+

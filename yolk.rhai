@@ -1,8 +1,9 @@
 export let eggs = #{
   git: #{
+    enabled: true,
     targets: "~",
     strategy: "merge",
-    templates: [ ".gitconfig" ],
+    templates: [".gitconfig"],
     main_file: ".gitconfig",
   },
 
@@ -30,7 +31,16 @@ export let eggs = #{
     unsafe_shell_hooks: #{
       pre_deploy: "./bin/bat.sh",
     },
-  }
+  },
+
+  bash: #{
+    enabled: SYSTEM.distro == "Arch Linux",
+    targets: "~/.config/bash",
+    unsafe_shell_hooks: #{
+      post_deploy: "./bin/bash/post_deploy.sh",
+      pre_undeploy: "./bin/bash/pre_undeploy.sh",
+    },
+  },
 };
 
 let git = #{
