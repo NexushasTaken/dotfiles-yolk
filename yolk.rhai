@@ -46,7 +46,15 @@ export let eggs = #{
     unsafe_shell_hooks: #{
       pre_deploy: "./bin/alacritty.sh",
     },
-  }
+  },
+
+  lazygit: #{
+    enabled: SYSTEM.distro == "Arch Linux",
+    targets: "~/.config/lazygit",
+    unsafe_shell_hooks: #{
+      pre_deploy: "./bin/lazygit.sh",
+    },
+  },
 };
 
 let git = #{

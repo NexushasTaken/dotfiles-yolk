@@ -1,0 +1,10 @@
+gui:
+  tabWidth: 2
+  nerdFontsVersion: 3
+  spinner:
+    frames:
+      - "◴"
+      - "◷"
+      - "◶"
+      - "◵"
+
