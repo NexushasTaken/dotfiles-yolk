@@ -41,6 +41,14 @@ export let eggs = #{
       pre_undeploy: "./bin/bash/pre_undeploy.sh",
     },
   },
+
+  alacritty: #{
+    enabled: SYSTEM.distro == "Arch Linux",
+    targets: "~/.config/alacritty",
+    unsafe_shell_hooks: #{
+      pre_deploy: "./bin/alacritty.sh",
+    },
+  }
 };
 
 let git = #{
