@@ -55,6 +55,14 @@ export let eggs = #{
       pre_deploy: "./bin/lazygit.sh",
     },
   },
+
+  btop: #{
+    enabled: SYSTEM.distro == "Arch Linux",
+    targets: "~/.config/btop",
+    unsafe_shell_hooks: #{
+      pre_deploy: "./bin/btop.sh",
+    },
+  },
 };
 
 let git = #{
