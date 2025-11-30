@@ -63,6 +63,14 @@ export let eggs = #{
       pre_deploy: "./bin/btop.sh",
     },
   },
+
+  xdg_user_dirs: #{
+    enabled: SYSTEM.distro == "Arch Linux",
+    targets: "~/.config/xdg_user_dirs",
+    unsafe_shell_hooks: #{
+      post_deploy: "./bin/xdg-user-dirs.sh",
+    },
+  },
 };
 
 let git = #{
