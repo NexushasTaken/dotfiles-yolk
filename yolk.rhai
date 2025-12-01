@@ -1,10 +1,9 @@
 export let eggs = #{
   git: #{
     enabled: true,
-    targets: "~",
-    strategy: "merge",
-    templates: [".gitconfig"],
-    main_file: ".gitconfig",
+    targets: "~/.config/git",
+    templates: ["config"],
+    main_file: "config",
   },
 
   hyprland: #{
