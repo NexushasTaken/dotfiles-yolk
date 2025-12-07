@@ -7,6 +7,7 @@ pkgs=(
   "zoxide"
   "lazygit"
   "btop"
+  "alacritty"
 
   # Optionals
   #"github-cli"
