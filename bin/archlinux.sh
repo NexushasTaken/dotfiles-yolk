@@ -18,6 +18,7 @@ pkgs=(
 
   # Optionals
   #"github-cli"
+  #"superfile"
 )
 
 pkg-get "${pkgs[@]}"

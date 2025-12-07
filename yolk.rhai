@@ -39,4 +39,8 @@ export let eggs = #{
     enabled: true,
     targets: "~/.config/lazygit",
   },
+  superfile: #{
+    enabled: true,
+    targets: "~/.config/superfile",
+  },
 };
