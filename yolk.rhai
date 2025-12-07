@@ -56,4 +56,8 @@ export let eggs = #{
       post_undeploy: "./bin/gh/post_undeploy.sh",
     },
   },
+  clangd: #{
+    enabled: true,
+    targets: "~/.config/clangd",
+  },
 };
