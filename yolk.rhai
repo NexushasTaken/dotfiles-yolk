@@ -34,6 +34,10 @@ export let eggs = #{
       ".": "~/.config/bash",
     },
   },
+  btop: #{
+    enabled: true,
+    targets: "~/.config/btop",
+  },
 
   lazygit: #{
     enabled: true,
