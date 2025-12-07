@@ -14,6 +14,7 @@ pkgs=(
   "bat"
   "eza"
   "zoxide"
+  "lazygit"
 )
 
 pkg-get "${pkgs[@]}"

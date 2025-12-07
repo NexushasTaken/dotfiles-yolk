@@ -13,6 +13,7 @@ export let eggs = #{
       post_deploy: "./bin/archlinux.sh",
     },
   },
+
   git: #{
     enabled: true,
     targets: "~/.config/git",
@@ -32,5 +33,10 @@ export let eggs = #{
       "bash_profile.sh": "~/.bash_profile",
       ".": "~/.config/bash",
     },
+  },
+
+  lazygit: #{
+    enabled: true,
+    targets: "~/.config/lazygit",
   },
 };
