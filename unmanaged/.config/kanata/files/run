@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exa -a -1 --icons=never | entr -cr kanata -dc /etc/kanata/config.kbd
