@@ -43,4 +43,13 @@ export let eggs = #{
     enabled: true,
     targets: "~/.config/superfile",
   },
+  gh: #{
+    enabled: true,
+    strategy: "merge",
+    targets: "~/.config/gh",
+    unsafe_shell_hooks: #{
+      pre_deploy: "./bin/gh/pre_deploy.sh",
+      post_undeploy: "./bin/gh/post_undeploy.sh",
+    },
+  },
 };

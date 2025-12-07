@@ -1,14 +1,5 @@
-source /etc/os-release
-
-function pkg-get() {
-  case "$ID" in
-    arch)
-      sudo pacman -S --needed "$@"
-      ;;
-    *)
-      ;;
-  esac
-}
+#!/usr/bin/bash
+source ./bin/utils.sh
 
 pkgs=(
   "bat"
