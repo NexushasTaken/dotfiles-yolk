@@ -15,6 +15,9 @@ pkgs=(
   "eza"
   "zoxide"
   "lazygit"
+
+  # Optionals
+  #"github-cli"
 )
 
 pkg-get "${pkgs[@]}"
