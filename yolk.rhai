@@ -6,17 +6,13 @@ export let data = #{
 };
 
 export let eggs = #{
-  bootstrap: #{
-    enabled: true,
-    targets: "~/.config/bootstrap",
-    unsafe_shell_hooks: #{
-      post_deploy: "./bin/archlinux.sh",
-    },
-  },
   home: #{
     enabled: true,
     targets: "~",
     strategy: "merge",
+    unsafe_shell_hooks: #{
+      post_deploy: "./bin/archlinux.sh",
+    },
   },
 
   git: #{
