@@ -13,6 +13,11 @@ export let eggs = #{
       post_deploy: "./bin/archlinux.sh",
     },
   },
+  home: #{
+    enabled: true,
+    targets: "~",
+    strategy: "merge",
+  },
 
   git: #{
     enabled: true,
