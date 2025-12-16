@@ -118,6 +118,26 @@ function pkg-get() {
   esac
 }
 
+function pkg-file() {
+  case "$ID" in
+    arch)
+      run sudo pacman -U --needed "$@"
+      ;;
+    *)
+      ;;
+  esac
+}
+
+function pkg-exists() {
+  case "$ID" in
+    arch)
+      run pacman -Qi "$@" &> /dev/null
+      ;;
+    *)
+      ;;
+  esac
+}
+
 function download() {
   local cache=false
   local link=""
@@ -139,5 +159,9 @@ function download() {
   # Download
   info "Downloading $(basename "$link")"
   run wget --passive-ftp -c -O "$out" "$link"
+}
+
+check-cmd() {
+  command -v "$1" >/dev/null 2>&1
 }
 
