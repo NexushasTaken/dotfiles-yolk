@@ -2,6 +2,8 @@ set -euo pipefail
 
 source /etc/os-release
 
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache/}/yolk"
+
 function to_ansi() {
   printf '\001\e[%sm\002' $1
 }
@@ -115,3 +117,26 @@ function pkg-get() {
       ;;
   esac
 }
+
+function download() {
+  local cache=false
+  local link=""
+  local out=""
+
+  link="${1:-}"
+  out="${2:-}"
+
+  # Require a link
+  if [[ -z "$link" ]]; then
+    error "usage: download <direct-link> [<output>]"
+  fi
+
+  if [[ -z "$out" ]]; then
+    out="$CACHE_DIR/$(basename "$link")"
+    run mkdir -p "$(dirname "$out")"
+  fi
+
+  # Download
+  run wget --passive-ftp -c -O "$out" "$link"
+}
+
