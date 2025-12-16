@@ -4,6 +4,10 @@ export let data = #{
     email: "nexushastaken@gmail.com",
   },
   font: "Hack Nerd Font",
+  cursor: #{
+    name: "phinger-cursor-dark",
+    size: 16,
+  },
 };
 
 export let eggs = #{
@@ -51,6 +55,17 @@ export let eggs = #{
   hypr: #{
     enabled: true,
     targets: "~/.config/hypr",
+    templates: [
+      "hyprland.conf",
+    ],
+  },
+  uwsm: #{
+    enabled: true,
+    targets: "~/.config/uwsm",
+    templates: [
+      "env",
+      "env-hyprland",
+    ],
   },
 
   lazygit: #{
