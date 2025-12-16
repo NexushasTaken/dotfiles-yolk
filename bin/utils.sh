@@ -137,6 +137,7 @@ function download() {
   fi
 
   # Download
+  info "Downloading $(basename "$link")"
   run wget --passive-ftp -c -O "$out" "$link"
 }
 
