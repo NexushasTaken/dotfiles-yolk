@@ -9,6 +9,14 @@ pkgs=(
   "btop"
   "alacritty"
 
+  "hyprland"
+  "uwsm"
+
+  "ttf-hack-nerd"
+  "noto-fonts"
+  "noto-fonts-cjk"
+  "noto-fonts-emoji"
+
   # Optionals
   #"github-cli"
   #"superfile"

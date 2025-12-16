@@ -48,6 +48,11 @@ export let eggs = #{
     ],
   },
 
+  hypr: #{
+    enabled: true,
+    targets: "~/.config/hypr",
+  },
+
   lazygit: #{
     enabled: true,
     targets: "~/.config/lazygit",
