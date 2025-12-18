@@ -111,7 +111,7 @@ function dir-remove() {
 function pkg-get() {
   case "$ID" in
     arch)
-      run sudo pacman -S --needed "$@"
+      run sudo "${PKG_MGR:-pacman}" -S --needed "$@"
       ;;
     *)
       ;;
