@@ -35,6 +35,15 @@ aur_pkgs=(
   "opentabletdriver"
 )
 
+if ! check-cmd paru; then
+  # paru_link="https://github.com/NexushasTaken/paru-bin.git"
+  paru_link="https://aur.archlinux.org/paru.git"
+  paru_dir="$CACHE_DIR/$(basename "$paru_link")"
+  [[ ! -d "$paru_dir" ]] && git clone "$paru_link" "$paru_dir"
+  cd "$paru_dir"
+  run makepkg -si --needed
+fi
+
 pkg-get "${pkgs[@]}"
 USE_AUR=yes pkg-get "${aur_pkgs[@]}"
 
@@ -43,12 +52,6 @@ if ! compgen -G "$XDG_DATA_HOME/icons/phinger-cursors-*"; then
     run mkdir -p "$XDG_DATA_HOME/icons"
     run tar xvfj "$CACHE_DIR/phinger-cursors-variants.tar.bz2" -C "$XDG_DATA_HOME/icons"
   fi
-fi
-
-if ! check-cmd paru; then
-  [[ ! -d "$CACHE_DIR/paru" ]] && git clone https://github.com/NexushasTaken/paru-bin.git "$CACHE_DIR/paru"
-  cd "$CACHE_DIR/paru"
-  run makepkg -si --needed
 fi
 
 pkg-exists opentabletdriver && service-enable --user --now opentabletdriver
