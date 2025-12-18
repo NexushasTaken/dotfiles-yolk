@@ -16,6 +16,7 @@ pkgs=(
   "waybar"
   "rofi"
   "cliphist"
+  "network-manager-applet"
 
   "ttf-hack-nerd"
   "noto-fonts"
