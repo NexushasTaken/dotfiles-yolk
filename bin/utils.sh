@@ -120,8 +120,34 @@ function dir-remove() {
   run rmdir "$@"
 }
 
+function pkg-get-not-installed() {
+  local pkgs=("$@")
+  local missing=()
+
+  for pkg in "${pkgs[@]}"; do
+    case "$ID" in
+      arch)
+        if ! pacman -Q "$pkg" &>/dev/null; then
+          missing+=("$pkg")
+        fi
+        ;;
+      *)
+        missing=("${pkgs[@]}")
+        ;;
+    esac
+  done
+
+  echo "${missing[@]}"
+}
+
 function pkg-get() {
   local sudo="sudo"
+  local pkgs=($(pkg-get-not-installed "$@"))
+
+  if [[ "${#pkgs[@]}" = "0" ]]; then
+    return 0
+  fi
+
   case "$ID" in
     arch)
       local PKG_MGR="${PKG_MGR:-}"
@@ -133,9 +159,9 @@ function pkg-get() {
       fi
 
       if [[ -n "$USE_AUR" ]]; then
-        run "$PKG_MGR" -S --needed "$@"
+        run "$PKG_MGR" -S --needed "${pkgs[@]}"
       else
-        run sudo pacman -S --needed "$@"
+        run sudo pacman -S --needed "${pkgs[@]}"
       fi
       ;;
     *)
