@@ -17,6 +17,8 @@ pkgs=(
   "rofi"
   "cliphist"
   "network-manager-applet"
+  "udisks2"
+  "udiskie"
 
   "ttf-hack-nerd"
   "noto-fonts"
