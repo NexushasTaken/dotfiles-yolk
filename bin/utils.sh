@@ -2,7 +2,15 @@ set -euo pipefail
 
 source /etc/os-release
 
-CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache/}/yolk"
+# XDG Directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+
+CACHE_DIR="${XDG_CACHE_HOME}/yolk"
 
 function to_ansi() {
   printf '\001\e[%sm\002' $1
@@ -90,6 +98,10 @@ function ask() {
   [[ "$answer" == "y" ]]
 }
 
+function check-cmd() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 function run() {
   if [[ "$1" == "-q" ]]; then
     shift
@@ -109,9 +121,22 @@ function dir-remove() {
 }
 
 function pkg-get() {
+  local sudo="sudo"
   case "$ID" in
     arch)
-      run sudo "${PKG_MGR:-pacman}" -S --needed "$@"
+      local PKG_MGR="${PKG_MGR:-}"
+      local USE_AUR="${USE_AUR:-}"
+
+      if [[ -n "$USE_AUR" && -z "$PKG_MGR" ]]; then
+        check-cmd yay && PKG_MGR=yay
+        check-cmd paru && PKG_MGR=paru
+      fi
+
+      if [[ -n "$USE_AUR" ]]; then
+        run "$PKG_MGR" -S --needed "$@"
+      else
+        run sudo pacman -S --needed "$@"
+      fi
       ;;
     *)
       ;;
@@ -161,7 +186,8 @@ function download() {
   run wget --passive-ftp -c -O "$out" "$link"
 }
 
-check-cmd() {
-  command -v "$1" >/dev/null 2>&1
+function service-enable() {
+  if ! run systemctl is-enabled "$@"; then
+    run systemctl enable "$@"
+  fi
 }
-

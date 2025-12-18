@@ -51,6 +51,10 @@ export let eggs = #{
       "alacritty.toml",
     ],
   },
+  kanata: #{
+    enabled: true,
+    targets: "~/.config/kanata",
+  },
 
   hypr: #{
     enabled: true,
