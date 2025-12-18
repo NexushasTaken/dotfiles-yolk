@@ -24,6 +24,7 @@ pkgs=(
   "udisks2"
   "udiskie"
   "dunst"
+  "gnome-themes-extra"
 
   "ttf-hack-nerd"
   "noto-fonts"
