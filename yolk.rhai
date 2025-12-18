@@ -79,6 +79,10 @@ export let eggs = #{
       "env-hyprland",
     ],
   },
+  dunst: #{
+    enabled: true,
+    targets: "~/.config/dunst",
+  },
 
   lazygit: #{
     enabled: true,

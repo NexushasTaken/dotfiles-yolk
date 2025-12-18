@@ -19,6 +19,7 @@ pkgs=(
   "network-manager-applet"
   "udisks2"
   "udiskie"
+  "dunst"
 
   "ttf-hack-nerd"
   "noto-fonts"
