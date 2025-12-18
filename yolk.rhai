@@ -63,6 +63,10 @@ export let eggs = #{
     enabled: true,
     targets: "~/.config/ranger",
   },
+  gdb: #{
+    enabled: true,
+    targets: "~/.config/gdb",
+  },
 
   hypr: #{
     enabled: true,

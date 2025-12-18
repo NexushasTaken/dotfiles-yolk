@@ -13,6 +13,7 @@ pkgs=(
   "wget"
   "xdg-user-dirs"
   "caja"
+  "gdb"
 
   "hyprland"
   "uwsm"
