@@ -9,6 +9,7 @@ pkgs=(
   "btop"
   "alacritty"
   "tmux"
+  "ranger"
 
   "hyprland"
   "uwsm"

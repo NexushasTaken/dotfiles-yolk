@@ -59,6 +59,10 @@ export let eggs = #{
     enabled: true,
     targets: "~/.config/tmux",
   },
+  ranger: #{
+    enabled: true,
+    targets: "~/.config/ranger",
+  },
 
   hypr: #{
     enabled: true,
