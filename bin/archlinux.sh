@@ -27,6 +27,7 @@ pkgs=(
 
   # Utilities
   "wget"
+  "xdg-user-dirs"
 )
 
 aur_pkgs=(
@@ -46,8 +47,10 @@ fi
 if ! check-cmd paru; then
   [[ ! -d "$CACHE_DIR/paru" ]] && git clone https://github.com/NexushasTaken/paru-bin.git "$CACHE_DIR/paru"
   cd "$CACHE_DIR/paru"
-  makepkg -si --needed
+  run makepkg -si --needed
 fi
 
 pkg-exists opentabletdriver && service-enable --user --now opentabletdriver
 pkg-exists waybar && service-enable --user --now waybar
+
+run xdg-user-dirs-update
