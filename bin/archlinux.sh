@@ -10,6 +10,9 @@ pkgs=(
   "alacritty"
   "tmux"
   "ranger"
+  "wget"
+  "xdg-user-dirs"
+  "caja"
 
   "hyprland"
   "uwsm"
@@ -29,10 +32,6 @@ pkgs=(
   # Optionals
   "github-cli"
   #"superfile"
-
-  # Utilities
-  "wget"
-  "xdg-user-dirs"
 )
 
 aur_pkgs=(
