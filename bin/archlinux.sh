@@ -22,7 +22,7 @@ pkgs=(
   "noto-fonts-emoji"
 
   # Optionals
-  #"github-cli"
+  "github-cli"
   #"superfile"
 
   # Utilities
