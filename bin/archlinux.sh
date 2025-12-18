@@ -8,6 +8,7 @@ pkgs=(
   "lazygit"
   "btop"
   "alacritty"
+  "tmux"
 
   "hyprland"
   "uwsm"

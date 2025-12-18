@@ -55,6 +55,10 @@ export let eggs = #{
     enabled: true,
     targets: "~/.config/kanata",
   },
+  tmux: #{
+    enabled: true,
+    targets: "~/.config/tmux",
+  },
 
   hypr: #{
     enabled: true,
