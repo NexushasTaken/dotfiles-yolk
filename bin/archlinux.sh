@@ -60,7 +60,7 @@ if ! compgen -G "$XDG_DATA_HOME/icons/phinger-cursors-*"; then
   fi
 fi
 
-pkg-exists opentabletdriver && service-enable --user --now opentabletdriver
-pkg-exists waybar && service-enable --user --now waybar
+pkg-exists opentabletdriver && service-enable --user opentabletdriver
+pkg-exists waybar && service-enable --user waybar
 
 run xdg-user-dirs-update
