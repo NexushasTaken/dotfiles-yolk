@@ -14,6 +14,7 @@ pkgs=(
   "xdg-user-dirs"
   "caja"
   "gdb"
+  "devhelp"
 
   "hyprland"
   "uwsm"
