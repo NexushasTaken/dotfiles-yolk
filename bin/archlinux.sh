@@ -15,6 +15,7 @@ pkgs=(
   "caja"
   "gdb"
   "devhelp"
+  "rsync"
 
   "hyprland"
   "uwsm"
