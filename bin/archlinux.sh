@@ -28,6 +28,7 @@ pkgs=(
   "udiskie"
   "dunst"
   "gnome-themes-extra"
+  "eom"
 
   "ttf-hack-nerd"
   "noto-fonts"
