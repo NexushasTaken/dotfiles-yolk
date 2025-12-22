@@ -43,12 +43,12 @@ aur_pkgs=(
 )
 
 if ! check-cmd paru; then
+  pkg-aur-install "https://aur.archlinux.org/paru.git"
   # paru_link="https://github.com/NexushasTaken/paru-bin.git"
-  paru_link="https://aur.archlinux.org/paru.git"
-  paru_dir="$CACHE_DIR/$(basename "$paru_link")"
-  [[ ! -d "$paru_dir" ]] && git clone "$paru_link" "$paru_dir"
-  cd "$paru_dir"
-  run makepkg -si --needed
+fi
+
+if ! check-cmd kanata; then
+  pkg-aur-install "https://github.com/NexushasTaken/kanata-bin.git"
 fi
 
 pkg-get "${pkgs[@]}"
@@ -63,5 +63,6 @@ fi
 
 pkg-exists opentabletdriver && service-enable --user opentabletdriver
 pkg-exists waybar && service-enable --user waybar
+pkg-exists kanata-bin && service-enable --user kanata
 
 run xdg-user-dirs-update

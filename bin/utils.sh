@@ -217,3 +217,12 @@ function service-enable() {
     run systemctl enable "$@"
   fi
 }
+
+function pkg-aur-install() {
+  local link="$1"
+  local dir="$CACHE_DIR/$(basename "$link")"
+  [[ ! -d "$dir" ]] && git clone "$link" "$dir"
+  pushd "$dir"
+  run makepkg -si --needed
+  popd
+}
