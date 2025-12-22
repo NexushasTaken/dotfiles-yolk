@@ -22,6 +22,7 @@ pkgs=(
   "waybar"
   "rofi"
   "cliphist"
+  "hyprshot"
   "network-manager-applet"
   "udisks2"
   "udiskie"
