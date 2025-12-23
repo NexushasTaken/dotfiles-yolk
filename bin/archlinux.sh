@@ -5,6 +5,7 @@ pkgs=(
   "bat"
   "eza"
   "zoxide"
+  "fzf"
   "lazygit"
   "btop"
   "alacritty"
