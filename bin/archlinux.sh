@@ -30,6 +30,7 @@ pkgs=(
   "gnome-themes-extra"
   "eom"
   "pavucontrol"
+  "xdg-utils"
 
   "ttf-hack-nerd"
   "noto-fonts"
