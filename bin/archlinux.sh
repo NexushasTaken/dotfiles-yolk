@@ -29,6 +29,7 @@ pkgs=(
   "dunst"
   "gnome-themes-extra"
   "eom"
+  "pavucontrol"
 
   "ttf-hack-nerd"
   "noto-fonts"

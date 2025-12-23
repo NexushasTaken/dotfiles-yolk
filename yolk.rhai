@@ -87,6 +87,10 @@ export let eggs = #{
     enabled: true,
     targets: "~/.config/dunst",
   },
+  waybar: #{
+    enabled: true,
+    targets: "~/.config/waybar",
+  },
 
   lazygit: #{
     enabled: true,
