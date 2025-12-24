@@ -32,6 +32,10 @@ export let eggs = #{
     targets: "~/.config/bat",
   },
 
+  fish: #{
+    enabled: false,
+    targets: "~/.config/fish",
+  },
   bash: #{
     enabled: true,
     targets: #{

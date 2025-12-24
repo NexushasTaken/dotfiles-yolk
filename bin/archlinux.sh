@@ -20,6 +20,7 @@ pkgs=(
   "tldr"
   "unzip"
   "zip"
+  # "fish"
 
   "hyprland"
   "uwsm"
