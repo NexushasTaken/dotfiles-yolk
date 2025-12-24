@@ -17,6 +17,8 @@ pkgs=(
   "gdb"
   "devhelp"
   "rsync"
+  "unzip"
+  "zip"
 
   "hyprland"
   "uwsm"
