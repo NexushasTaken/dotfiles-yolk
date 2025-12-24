@@ -17,6 +17,7 @@ pkgs=(
   "gdb"
   "devhelp"
   "rsync"
+  "tldr"
   "unzip"
   "zip"
 
