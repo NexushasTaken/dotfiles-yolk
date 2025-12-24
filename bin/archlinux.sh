@@ -32,6 +32,7 @@ pkgs=(
   "eom"
   "pavucontrol"
   "xdg-utils"
+  "gamemode"
 
   "ttf-hack-nerd"
   "noto-fonts"
@@ -69,5 +70,6 @@ fi
 pkg-exists opentabletdriver && service-enable --user opentabletdriver
 pkg-exists waybar && service-enable --user waybar
 pkg-exists kanata-bin && service-enable --user kanata
+pkg-exists gamemode && service-enable --user gamemoded
 
 run xdg-user-dirs-update
