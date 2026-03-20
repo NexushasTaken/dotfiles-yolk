@@ -25,6 +25,8 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+
 function add_path() {
   local dir="$1"
   local action="${2:-append}"
@@ -53,6 +55,7 @@ add_path "$ANDROID_HOME/tools"
 add_path "$ANDROID_HOME/tools/bin"
 add_path "$ANDROID_HOME/platform-tools"
 add_path "$JAVA_HOME/bin"
+add_path "$GOPATH/bin"
 add_path "$HOME/.odin"
 add_path "$HOME/.ghcup/bin"
 add_path "$HOME/.cargo/bin"
